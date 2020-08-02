@@ -2,7 +2,6 @@
     padding-top: 20px;
     width: 200px;
     position: sticky;
-    position: sticky;
     top: 0;
     z-index: 100;
 }
@@ -71,6 +70,7 @@
 
 .Busca {
     margin-top:10px;
+    margin-left:10px;
     display: flex;
     flex-direction: row;
     justify-items: flex-start;
@@ -86,6 +86,7 @@
 .Busca svg {
     padding-left:10px;
 }
+
 .Busca input {
     border: none;
     background-color: transparent;
@@ -104,4 +105,32 @@
 
 .Busca:focus {
     border: 1px solid #38BAAA;
+}
+
+.Trends {
+    margin-top:20px;
+    margin-left:10px;
+    position: sticky;
+    top: 75px;
+}
+
+.trend-item {
+    margin-top:20px;
+    padding: 15px;
+    background: #eaeaea83;
+    border-radius: 5px;
+}
+
+.trend-item:hover {
+    cursor: pointer;
+    opacity: 80%;
+}
+
+.trend-item p {
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.trend-item h4 {
+    font-size: 16px;
 }

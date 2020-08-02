@@ -9,19 +9,48 @@ import Nanda from '../img/nanda.png'
 import Yan from '../img/perfil/Yan.jpg'
 import Viajante from '../img/fernanda.png'
 import Cloroquino from '../img/cloroquino.jpg'
+import George from '../img/george.jpg'
+import Bora from '../img/bora.png'
 
-
-export default function Conteudo () {
+export default function Conteudo (props) {
     
-        return (                  
-            <div class="Content">
-                <Header></Header>                                                             
-                <Input></Input>        
-                
-                <Post foto={Yan} nome="Yan Vancelis" user="@yanvancelis" post="Como elegeram esse cara presidente?" imagem={Cloroquino}></Post>
-                <Post foto={Nanda} nome="Fernanda" user="@fernanda" post="Reclamar que nada, quero é viajar!" imagem={Viajante}></Post>            
-            </div>
-        )
+    const [posts, setPosts] = useState([
+        {
+            nome: 'Yan Vancelis',
+            user: "@yanvancelis",
+            foto: Yan,
+            post: "Como elegeram isso presidente?",
+            imagem: Cloroquino,
+        },
+        {
+            nome: "Fernanda Gadêlha",
+            user: "@fegadelha",
+            foto: Nanda,
+            post: "Eu quero é viajar!",
+            imagem: Viajante,
+        },
+        {
+            nome: "George Moreno",
+            user: "@gemoreno",
+            foto: George,
+            post: "Saudade das grandes produções!",
+            imagem: Bora,
+        }
+    ])
+
+    // Adicionei a contagem de likes no próprio estado do componente do post
+
+    return (                  
+        <div class="Content">
+            <Header></Header>                                                             
+            <Input></Input>            
+            {posts.map (                        
+                (postagem) => (
+                    <Post nome={postagem.nome} user={postagem.user} foto={postagem.foto} post={postagem.post} imagem={postagem.imagem}></Post>
+                )                                                                              
+            )}                           
+        </div>
+    )       
 }
  
     
